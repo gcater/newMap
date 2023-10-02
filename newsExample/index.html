@@ -1,75 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>News Article</title>
-    <style>
-        #news-article {
-            width: 80%;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        img {
-            max-width: 100%;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Headlines</title>
 </head>
+
 <body>
-    <div id="news-article">
-        <!-- News content will be inserted here -->
-    </div>
+    <h1>Top Headlines</h1>
+    <ul id="california-news-list"></ul>
+    <ul id="virginia-news-list"></ul>
 
-    <script>
-        // Define the JSON data
-        var newsData = {
-            "status": "ok",
-            "totalResults": 67,
-            "articles": [
-                {
-                    "source": {
-                        "id": null,
-                        "name": "CNBC"
-                    },
-                    "author": "Alex Harring, Samantha Subin",
-                    "title": "Dow slides 200 points with investors on edge before Fed decision: Live updates - CNBC",
-                    "description": "Traders are looking ahead to the Federal Reserve's policy meeting, which begins Tuesday and ends with a rate policy decision Wednesday afternoon.",
-                    "url": "https://www.cnbc.com/2023/09/18/stock-futures-today-live-updates.html",
-                    "urlToImage": "https://image.cnbcfm.com/api/v1/image/107295802-1693925457434-gettyimages-1661433802-wallst4998_klla2qd1.jpeg?v=1695135359&w=1920&h=1080",
-                    "publishedAt": "2023-09-19T16:20:00Z",
-                    "content": "Stocks retreated on Tuesday as Wall Street awaited the results of this week's Federal Reserve policy meeting.\r\nThe Dow Jones Industrial Average lost 295 points, or 0.9%. The S&amp;P 500 slid 0.7%, wh… [+1419 chars]"
-                }
-            ]
-        };
-
-        // Function to display the news article
-        function displayNewsArticle() {
-            var article = newsData.articles[0];
-            var newsArticleElement = document.getElementById("news-article");
-
-            // Create HTML elements to display the article
-            var articleTitle = document.createElement("h2");
-            articleTitle.textContent = article.title;
-
-            var articleDescription = document.createElement("p");
-            articleDescription.textContent = article.description;
-
-            var articleLink = document.createElement("a");
-            articleLink.textContent = "Read more";
-            articleLink.href = article.url;
-
-            var articleImage = document.createElement("img");
-            articleImage.src = article.urlToImage;
-            articleImage.alt = "Article Image";
-
-            // Append elements to the news-article div
-            newsArticleElement.appendChild(articleTitle);
-            newsArticleElement.appendChild(articleImage);
-            newsArticleElement.appendChild(articleDescription);
-            newsArticleElement.appendChild(articleLink);
-        }
-
-        // Call the function to display the news article
-        displayNewsArticle();
-    </script>
+    <script src="app.js"></script>
 </body>
+
 </html>
