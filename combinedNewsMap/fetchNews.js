@@ -26,13 +26,24 @@ async function fetchMultipleNews() {
         fetchNews(ENDPOINT_VIRGINIA),
         fetchNews(ENDPOINT_CALIFORNIA)
     ]);
-    displayNews('topHeadlines-news-list', topArticles);
-    displayNews('virginia-news-list', virginiaArticles);
     displayNews('california-news-list', californiaArticles);
+    displayNews('virginia-news-list', virginiaArticles);
+    //displayNews('topHeadlines-news-list', topArticles);
+    
+    
 }
 
 function displayNews(listId, articles) {
     const newsList = document.getElementById(listId);
+    console.log(newsList);
+    
+    // Create the <ul> element if it doesn't exist
+    if (!newsList) {
+        const listContainer = document.querySelector('.list-container');
+        const newUl = document.createElement('ul');
+        newUl.id = listId;
+        listContainer.appendChild(newUl);
+    }
     
     // Clear out any old content
     newsList.innerHTML = '';
@@ -49,5 +60,6 @@ function displayNews(listId, articles) {
         newsList.appendChild(listItem);
     });
 }
+
 
 fetchMultipleNews();
