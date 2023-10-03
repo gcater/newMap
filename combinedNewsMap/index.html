@@ -11,9 +11,11 @@
 	    color: #333;
 	    padding: 5px;
 	    font-weight: bold;
-	  }
+	    }
 
-      
+	  #california-news-list {
+    	display: none; /* Hide the California news list by default */
+		} 
 	</style>
 	
 	<script src="../lib/raphael.js"></script>
@@ -26,24 +28,27 @@
 	<script>
 	$(document).ready(function() {
 	  $('#map').usmap({
-	    'stateSpecificStyles': {
+		
+		'stateSpecificStyles': {
 	      'AK' : {fill: '#f00'}
 	    },
 	    'stateSpecificHoverStyles': {
 	      'HI' : {fill: '#ff0'}
 	    },
 	    
-	    'mouseoverState': {
-	      'HI' : function(event, data) {
-	        //return false;
-	      }
-	    },
-	    'mouseoverState': {
-	      // Show the corresponding list container when hovering over a state
-	      'CA' : function(event, data) {
-            $('#california-news-list').show();
-	      }
-	    },
+
+	    // 'mouseoverState': {
+	    //   'HI' : function(event, data) {
+	    //     //return false;
+	    //   }
+	    // },
+	    // 'mouseoverState': {
+	    //   // Show the corresponding list container when hovering over a state
+	    //   'CA' : function(event, data) {
+		// 	console.log("here!s")
+        //     $('#california-news-list').show();
+	    //   }
+	    // },
 	    
 	    'mouseoutState': {
 	      // Hide the list container when hovering out of a state
@@ -51,6 +56,12 @@
             $('#california-news-list').hide(); // Hide the California news list
 	      }
 	    },
+
+		
+		'mouseover': function(event, data) {
+	        console.log("here!!")
+	      }
+	    ,   
 	    
 	    'click' : function(event, data) {
 	      $('#alert')
@@ -74,7 +85,6 @@
     
     <!-- List Container -->
     <div class="list-container">
-      
       <h4>CALIFORNIA HEADLINES</h4>
       <ul id="california-news-list"></ul>
       <h4>VIRGINIA HEADLINES</h4>   
