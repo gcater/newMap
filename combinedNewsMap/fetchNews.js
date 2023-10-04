@@ -28,7 +28,7 @@ async function fetchMultipleNews() {
     ]);
     displayNews('california-news-list', californiaArticles);
     displayNews('virginia-news-list', virginiaArticles);
-    //displayNews('topHeadlines-news-list', topArticles);
+    displayNews('topHeadlines-news-list', topArticles);
     
     
 }
