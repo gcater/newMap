@@ -18,13 +18,18 @@
 
 /* CSS for the hoverable box */
 .hover-box {
-    display: none; /* Hide the box by default */
-    position: absolute;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    z-index: 1; /* Ensure the box appears above other content */
-  }
+  /*display: ; /* Hide the box by default */
+  position: absolute;
+  background-color: black;
+  border: 1px solid black;
+  padding: 10px;
+  z-index: 2; /* Ensure the box appears above the map (which may have z-index: 1) */
+  /* Position the box to the right of the map */
+  top: 250px; /* Adjust the top position as needed */
+  left: 1000px; /* Position it to the right of the map */
+}
+
+  
   
   /* CSS for the <ul> list inside the box */
   .hover-box ul {
